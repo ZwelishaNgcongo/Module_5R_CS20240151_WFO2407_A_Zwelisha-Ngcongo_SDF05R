@@ -52,3 +52,115 @@ p {
 }
 
 /* Add your custom styles for btn-1, btn-2, and btn-3 */
+.btn-1{
+    background: rgb(5, 137, 155);
+    background: radial-gradient(circle, rgba(5,137,155,1) 0%, rgb(117, 6, 151) 100%);
+   
+}
+
+.btn-1:hover{
+    background: linear-gradient(45deg,red,green,orange,red,blue);
+    background-size: 500%;
+    z-index: 1;
+    animation: motion 7s linear infinite;
+}
+@keyframes motion{
+      from{
+        background-position: 0%;
+      }
+      to{
+        background-position: 300%;
+      }
+}
+.btn-1::after{
+    content: "";
+    position: absolute;
+    left:-10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+    background: inherit;
+    border-radius: 30px;
+    opacity: 0;
+    filter: blur(30px);
+}
+.btn-1:hover::after{
+    opacity: 100%;
+    z-index: -1;
+}
+.btn-1:active{ 
+    background: transparent;
+    color: black;
+}
+
+
+.btn-2 {
+    background: rgb(160, 102, 54);  
+    font-size: 13px;
+    transition: all 0.5 ease;
+
+    
+}
+.btn-2:hover{
+    color:black;
+    font-size: 15px;
+}
+.btn-2:active{
+    background: linear-gradient(90deg,red,black);
+    z-index: 1;
+    transform-style: preserve-3d;
+    animation: rotate 0.5s linear infinite;
+
+}
+@keyframes rotate{
+    0%{
+        transform: rotateY(-30deg) rotateX(0deg);
+    }
+    25%{
+        transform: rotateY(-60deg) rotateX(90eg);
+    }
+    50%{
+        transform: rotateY(-90deg) rotateX(180deg);
+    }
+    75%{
+        transform: rotateY(-1200deg) rotateX(270deg);
+    }
+    100%{
+        transform: rotateY(-150deg) rotateX(360deg);
+    }
+}
+.btn-3{
+    background: #000;
+    animation: flippie 1s infinite;
+}
+@keyframes flippie{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(2);
+        opacity: 0.5;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.btn-3:hover{
+    background: rgba(50, 134, 10, 0.575);
+    animation: flippie 0.5s infinite;
+}
+@keyframes flippie{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotateY(180deg);
+    }
+}
+.btn-3:active{
+    color: #f0094f;
+    
+  
+}
